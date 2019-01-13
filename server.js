@@ -25,7 +25,7 @@ app.get('/about', (req, res) => {
 });
 
 app.get('/weather-forecast', (req, res) => {
-    res.render('about.hbs', {
+    res.render('forecast-weather.hbs', {
         pageTitle: 'Weather Forecast',
         welcomeMessage: 'Check the weather!',
         currentYear: new Date().getFullYear() 
