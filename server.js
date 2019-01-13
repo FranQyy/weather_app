@@ -3,12 +3,14 @@ const hbs = require('hbs');
 const geocode = require('./geocode/geocode');
 const weather = require('./weather/weather');
 
+
 var app = express();
 const port=process.env.PORT || 3000
 
 hbs.registerPartials(__dirname + '/views/partials')
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
+
 
 const bodyParser = require('body-parser')
 

@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>{{pageTitle}}</title>
+        {{>head}}
     </head>
     <body>
         {{>header}}
         {{welcomeMessage}}
 
         <form action="/weather-forecast" method="post">
-            <p>City: <input type="text" name="city" /></p>
+            <p>City: <input type="text" name="city" placeholder="Enter a City"/></p>
             <p><button type="submit">Send</button></p>
             {{city}}, Actual temperature is: {{temp1}}. It feels like: {{temp2}}.
         </form>
