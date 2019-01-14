@@ -5,12 +5,14 @@
     </head>
     <body>
         {{>header}}
-        {{welcomeMessage}}
-
+        <section>
+            {{welcomeMessage}}
+        </section>
+        
         <form action="/weather-forecast" method="post">
             <p>City: <input type="text" name="city" placeholder="Enter a City"/></p>
             <p><button type="submit">Send</button></p>
-            {{city}}, Actual temperature is: {{temp1}}. It feels like: {{temp2}}.
+            {{city}}, Actual temperature is: {{temp1}}°C. It feels like: {{temp2}}°C.
         </form>
     </body>
     {{>footer}}

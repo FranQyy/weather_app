@@ -3,20 +3,16 @@ const hbs = require('hbs');
 const geocode = require('./geocode/geocode');
 const weather = require('./weather/weather');
 
-
 var app = express();
 const port=process.env.PORT || 3000
+const bodyParser = require('body-parser')
+const middleware = [
+  bodyParser.urlencoded()
+]
 
 hbs.registerPartials(__dirname + '/views/partials')
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
-
-
-const bodyParser = require('body-parser')
-
-const middleware = [
-  bodyParser.urlencoded()
-]
 app.use(middleware)
 
 
@@ -45,7 +41,7 @@ app.get('/weather-forecast', (req, res) => {
 });
 
 app.post('/weather-forecast', (req, res) => {
-    var data = req.body;
+    var data = req.body; //thanks to bodyparser middleware
 
 
     geocode.geocodeAddress(data.city, (errorMessage, results) => {
